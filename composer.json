@@ -1,0 +1,41 @@
+{
+  "name": "anthony/breaker",
+  "description": "an breaker for laravel",
+  "keywords": ["laravel","breaker"],
+  "homepage": "https://github.com/king19800105/breaker.git",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Anthony",
+      "email": "king19800105@163.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php":">=7.1"
+  },
+  "require-dev":{
+    "phpunit/phpunit": "~6.0"
+  },
+  "autoload":{
+    "psr-4":{
+      "App\\": "app/",
+      "Anthony\\Breaker\\":"src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Anthony\\Breaker\\Test\\": "tests/"
+    }
+  },
+  "config": {
+    "preferred-install": "dist"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Anthony\\Breaker\\Providers\\BreakerServiceProvider"
+      ]
+    }
+  }
+}
