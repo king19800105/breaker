@@ -6,6 +6,7 @@ use Anthony\Breaker\Core\APCuCircuitBreaker;
 use Anthony\Breaker\Core\RedisCircuitBreaker;
 use Illuminate\Support\ServiceProvider;
 
+
 class BreakerServiceProvider extends ServiceProvider
 {
     public function boot()
