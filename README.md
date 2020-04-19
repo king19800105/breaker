@@ -1,5 +1,6 @@
 # breaker
 - laravel 断路器支持
+- 支持apcu与redis两个版本
 
 ### 安装和配置
 
