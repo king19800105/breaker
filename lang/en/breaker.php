@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'apcu_cli'              => 'Circuit breaker apcu driver is not recommended to use in cli mode, it is recommended to bind redis driver',
     'reason'                => 'breaker configuration error, reason:',
     'app_id'                => 'breaker appId is illegal.',
     'cycle_time'            => 'breaker cycle time must be between :min ~ :max.',

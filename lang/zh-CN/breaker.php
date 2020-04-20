@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'apcu_cli'              => '断路器apcu驱动不建议在cli模式下使用，建议绑定redis驱动',
     'reason'                => '断路器配置错误，原因：',
     'app_id'                => '断路器应用名称非法',
     'cycle_time'            => '断路器探测时间必须在 :min ~ :max 秒之间',

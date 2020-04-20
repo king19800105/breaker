@@ -243,6 +243,10 @@ abstract class BaseCircuitBreaker implements ICircuitBreaker
      */
     protected function validate()
     {
+        if ($this instanceof APCuCircuitBreaker && \PHP_SAPI === 'cli') {
+            throw new CircuitBreakerException(trans('breaker.apcu_cli'));
+        }
+
         if (!$this->option instanceof Option) {
             throw new CircuitBreakerException(trans('breaker.option'));
         }
