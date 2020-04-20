@@ -244,23 +244,23 @@ abstract class BaseCircuitBreaker implements ICircuitBreaker
     protected function validate()
     {
         if ($this instanceof APCuCircuitBreaker && \PHP_SAPI === 'cli') {
-            throw new CircuitBreakerException(trans('breaker.apcu_cli'));
+            throw new CircuitBreakerException(trans('breaker::message.apcu_cli'));
         }
 
         if (!$this->option instanceof Option) {
-            throw new CircuitBreakerException(trans('breaker.option'));
+            throw new CircuitBreakerException(trans('breaker::message.option'));
         }
 
         if (empty($this->option->getAppId())) {
-            throw new CircuitBreakerException(trans('breaker.app_id'));
+            throw new CircuitBreakerException(trans('breaker::message.app_id'));
         }
 
         if ($this->option->getThreshold() < $this->option->getMinSample()) {
-            throw new CircuitBreakerException(trans('breaker.threshold_less_sample'));
+            throw new CircuitBreakerException(trans('breaker::message.threshold_less_sample'));
         }
 
         if ($this->option->getCycleTime() < $this->option->getOpenTimeout()) {
-            throw new CircuitBreakerException(trans('breaker.cycle_less_timeout'));
+            throw new CircuitBreakerException(trans('breaker::message.cycle_less_timeout'));
         }
     }
 

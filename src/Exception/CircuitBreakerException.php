@@ -14,7 +14,7 @@ class CircuitBreakerException extends \Exception
 
     public function __construct($message = '')
     {
-        $message = trans('breaker.reason') . $message;
+        $message = trans('breaker::message.reason') . $message;
         parent::__construct($message, $this->code, null);
     }
 }

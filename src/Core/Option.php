@@ -146,7 +146,7 @@ class Option
     public function setCycleTime(int $cycle): self
     {
         if ($cycle < static::MIN_CYCLE_TIME || $cycle > static::MAX_CYCLE_TIME) {
-            throw new CircuitBreakerException(trans('breaker.cycle_time', ['min' => static::MIN_CYCLE_TIME, 'max' => static::MAX_CYCLE_TIME]));
+            throw new CircuitBreakerException(trans('breaker::message.cycle_time', ['min' => static::MIN_CYCLE_TIME, 'max' => static::MAX_CYCLE_TIME]));
         }
 
         $this->cycleTime = $cycle;
@@ -163,7 +163,7 @@ class Option
     public function setOpenTimeout(int $timeout): self
     {
         if ($timeout < static::MIN_OPEN_TIMEOUT || $timeout > static::MAX_OPEN_TIMEOUT) {
-            throw new CircuitBreakerException(trans('breaker.open_timeout', ['min' => static::MIN_OPEN_TIMEOUT, 'max' => static::MAX_OPEN_TIMEOUT]));
+            throw new CircuitBreakerException(trans('breaker::message.open_timeout', ['min' => static::MIN_OPEN_TIMEOUT, 'max' => static::MAX_OPEN_TIMEOUT]));
         }
 
         $this->openTimeout = $timeout;
@@ -180,7 +180,7 @@ class Option
     public function setThreshold(int $cnt): self
     {
         if ($cnt < static::MIN_THRESHOLD || $cnt > static::MAX_THRESHOLD) {
-            throw new CircuitBreakerException(trans('breaker.threshold', ['min' => static::MIN_THRESHOLD, 'max' => static::MAX_THRESHOLD]));
+            throw new CircuitBreakerException(trans('breaker::message.threshold', ['min' => static::MIN_THRESHOLD, 'max' => static::MAX_THRESHOLD]));
         }
 
         $this->threshold = $cnt;
@@ -198,7 +198,7 @@ class Option
     public function setPercent(float $percent): self
     {
         if ($percent < static::MIN_PERCENT || $percent > static::MAX_PERCENT) {
-            throw new CircuitBreakerException(trans('breaker.percent', ['min' => static::MIN_PERCENT, 'max' => static::MAX_PERCENT]));
+            throw new CircuitBreakerException(trans('breaker::message.percent', ['min' => static::MIN_PERCENT, 'max' => static::MAX_PERCENT]));
         }
 
         $this->percent = $percent;
@@ -215,7 +215,7 @@ class Option
     public function setMinSample(int $sample)
     {
         if ($sample < static::MIN_SAMPLE || $sample > static::MAX_SAMPLE) {
-            throw new CircuitBreakerException(trans('breaker.min_sample', ['min' => static::MIN_SAMPLE, 'max' => static::MAX_SAMPLE]));
+            throw new CircuitBreakerException(trans('breaker::message.min_sample', ['min' => static::MIN_SAMPLE, 'max' => static::MAX_SAMPLE]));
         }
 
         $this->minSample = $sample;
@@ -232,7 +232,7 @@ class Option
     public function setLengthen(int $lengthen): self
     {
         if ($lengthen < static::MIN_LENGTHEN || $lengthen > static::MAX_LENGTHEN) {
-            throw new CircuitBreakerException(trans('breaker.lengthen', ['min' => static::MIN_LENGTHEN, 'max' => static::MAX_LENGTHEN]));
+            throw new CircuitBreakerException(trans('breaker::message.lengthen', ['min' => static::MIN_LENGTHEN, 'max' => static::MAX_LENGTHEN]));
         }
 
         $this->lengthen = $lengthen;
@@ -250,11 +250,11 @@ class Option
     public function setHalfOpenStatusMove(int $success, int $fail = 1): self
     {
         if ($success < static::MIN_HALF_OPEN_COUNT || $success > static::MAX_HALF_OPEN_COUNT) {
-            throw new CircuitBreakerException(trans('breaker.op_success', ['min' => static::MIN_HALF_OPEN_COUNT, 'max' => static::MAX_HALF_OPEN_COUNT]));
+            throw new CircuitBreakerException(trans('breaker::message.op_success', ['min' => static::MIN_HALF_OPEN_COUNT, 'max' => static::MAX_HALF_OPEN_COUNT]));
         }
 
         if ($fail < static::MIN_HALF_OPEN_COUNT || $fail > static::MAX_HALF_OPEN_COUNT) {
-            throw new CircuitBreakerException(trans('breaker.op_fail', ['min' => static::MIN_HALF_OPEN_COUNT, 'max' => static::MAX_HALF_OPEN_COUNT]));
+            throw new CircuitBreakerException(trans('breaker::message.op_fail', ['min' => static::MIN_HALF_OPEN_COUNT, 'max' => static::MAX_HALF_OPEN_COUNT]));
         }
 
         $this->halfOpenSuccess = $success;
