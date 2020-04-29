@@ -16,6 +16,6 @@ return [
     'time_limit'            => '断路器业务执行超时时间设置非法',
     'err_result'            => '断路器错误结果设置非法',
     'option'                => '断路器参数对象非法',
-    'threshold_less_sample' => '错误阀值不能小于最小样本',
+    'threshold_less_sample' => '错误阀值不能小于最小样本!',
     'cycle_less_timeout'    => '断路器执行周期不能小于开启时间'
 ];
